@@ -1,7 +1,7 @@
 local frame = require'websocket.frame'
 local handshake = require'websocket.handshake'
 local tools = require'websocket.tools'
-local ssl = require'ssl'
+-- local ssl = require'ssl' Removing support because Solar2d does not include ssl in HTML5 builds
 local tinsert = table.insert
 local tconcat = table.concat
 
@@ -128,8 +128,10 @@ local connect = function(self,ws_url,ws_protocol,ssl_params)
     return nil,err,nil
   end
   if protocol == 'wss' then
-    self.sock = ssl.wrap(self.sock, ssl_params)
-    self.sock:dohandshake()
+    -- Removing support because Solar2d does not include ssl in HTML5 builds. Do not use websockets for any secure data if you are not securing over ssl
+    -- self.sock = ssl.wrap(self.sock, ssl_params)
+    -- self.sock:dohandshake()
+    return nil, 'wss not supported because there is no ssl library'
   elseif protocol ~= "ws" then
     return nil, 'bad protocol'
   end

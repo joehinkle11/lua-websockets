@@ -1,3 +1,7 @@
+# This fork is intended to work with Solar2d (formerly Corona SDK)
+
+I still need to test it, and I'll update the readme when it works (or doesn't)
+
 # Not maintained / maintainer wanted !!!!
 
 If someone wants to maintain / take ownership of this project, reach out to me (issue, email). I like Lua very much, but I don't have enough time / resources to stay engaged with it.
